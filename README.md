@@ -1,2 +1,2 @@
-# caai_petition_master
+# Caai Petition Master
 Modular petition-site-building platform

@@ -1,4 +1,4 @@
 /assets/*
-/administration/assets/*
-/lib/protected/runtime/*
-/petitions/*/minif/
+/administration/assets/**
+/lib/protected/runtime/**
+/petitions/*/minify/

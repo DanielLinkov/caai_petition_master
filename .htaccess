@@ -1,0 +1,25 @@
+RewriteEngine on
+
+# if $showScriptName is false in UrlManager, do not allow accessing URLs with script name
+RewriteRule ^index.php/ - [L,R=404]
+
+# If a directory or a file exists, use the request directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise forward the request to index.php
+RewriteRule . index.php
+
+Options -Indexes
+ExpiresActive on
+ExpiresByType text/css "now plus 1 weeks"
+ExpiresByType image/* "now plus 1 weeks"
+ExpiresByType image/svg+xml "now plus 1 weeks"
+ExpiresByType text/javascript "now plus 1 weeks"
+ExpiresByType application/javascript "now plus 1 weeks"
+ExpiresByType application/x-javascript "now plus 1 weeks"
+ExpiresByType application/x-font-woff "now plus 1 weeks"
+ExpiresByType application/x-font-ttf "now plus 1 weeks"
+ExpiresByType application/vnd.ms-fontobject "now plus 1 weeks"
+
+AddOutputFilterByType DEFLATE text/css text/javascript application/javascript application/x-javascript

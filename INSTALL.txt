@@ -1,0 +1,41 @@
+REQUIREMENTS
+1. Apache 2.4 server
+2. php 7.2+
+3. MySQL/mariaDB server
+
+
+INSTALLATION
+1. Unzip everything from the petition-master directory found in the petition-master.zip file in the (sub)domain root directory.
+   (protected directories are restricted through server configuration files)
+2. Permissions
+   a) Writable by server directories:
+	- /petitions/
+	- /assets/
+	- /administration/assets/
+	- /lib/protected/runtime/
+   b) To avoid possible permission security server errors remove the group writable flag (g-w) from
+	- /index.php
+	- /administration/
+	- /administration/index.php
+3. DB deployment
+   a) Create a database (and assigned db user) for the platform (all petitions will use the same database)
+   b) Configure the file /lib/protected/config/db.php with the necessary values
+	- db name (at the end of the 'dns'=>.... line
+	- db username and applicable password
+   c) Import the sql data choosing the proper file from /lib/data/
+	- schema.sql for empty db
+	- furfree.sql for the created furfree petition along with a test (duplicate) petition
+4. Accessing the site
+   a) The front end is accessible at the root location (petition-subdomain.caai.bg/)
+   b) The administration panel is at the
+	/administration
+      url
+5. Creating and configuring the root account
+   a) Point the browser to the /administration url
+   b) A prompt appears asking for the root password
+   c) After entering it the root account is created
+6. Configuring the administration account
+   After you login with the root account (currently no other admin accounts can be created), from the menu (on the right) select Root->Preferences
+   Select the prefered text editor and key mapping (applicable only to CodeMirror editor).
+
+7. Enjoy your Petition Master platform installation

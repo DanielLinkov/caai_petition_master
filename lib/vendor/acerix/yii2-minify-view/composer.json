@@ -1,0 +1,51 @@
+{
+    "name": "acerix/yii2-minify-view",
+    "description": "Yii2 View component to minify CSS, JS, and page HTML, and concatenate assets of the same type.",
+    "keywords": [
+        "yii2",
+        "minify",
+        "compress",
+        "view",
+        "js",
+        "html",
+        "css"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "support": {
+        "issues": "https://github.com/acerix/yii2-minify-view/issues?state=open",
+        "wiki": "https://github.com/acerix/yii2-minify-view/wiki",
+        "source": "https://github.com/acerix/yii2-minify-view"
+    },
+    "authors": [
+    {
+        "name": "Dylan Ferris",
+        "email": "dylan@psilly.com"
+    }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0",
+        "mrclay/minify": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "acerix\\yii\\minify\\": ""
+        }
+    },
+    "config": {
+        "fxp-asset.installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

@@ -2,3 +2,4 @@
 /administration/assets/**
 /lib/protected/runtime/**
 /petitions/*/minify/
+!.gitkeep

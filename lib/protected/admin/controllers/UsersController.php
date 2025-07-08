@@ -13,7 +13,7 @@ class UsersController extends \yii\web\Controller{
 	public function behaviors(){
 		return [
 			'access'=>[
-				'class'=>AccessControl::className(),
+				'class'=>AccessControl::class,
 				'rules'=>[
 					[
 						'allow'=>false,
@@ -31,7 +31,7 @@ class UsersController extends \yii\web\Controller{
 				],
 			],
 			'verbs'=>[
-				'class'=>VerbFilter::className(),
+				'class'=>VerbFilter::class,
 				'actions'=>[
 					'delete'=>['POST']
 				]

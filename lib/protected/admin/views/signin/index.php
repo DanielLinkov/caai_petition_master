@@ -20,7 +20,7 @@ if($model->hasErrors('signin'))
 	echo $form->errorSummary($model);
 echo $form->field($model,'username');
 echo $form->field($model,'password')->passwordInput();
-echo $form->field($model,'captcha',['inputOptions'=>['class'=>'form-control','autocomplete'=>'off']])->widget(Captcha::className(),['captchaAction'=>'signin/captcha']);
+echo $form->field($model,'captcha',['inputOptions'=>['class'=>'form-control','autocomplete'=>'off']])->widget(Captcha::class,['captchaAction'=>'signin/captcha']);
 echo Html::submitButton("Sign In",['class'=>'btn btn-primary btn-block']);
 ActiveForm::end();
 ?>

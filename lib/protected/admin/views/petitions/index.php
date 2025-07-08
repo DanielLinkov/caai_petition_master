@@ -36,7 +36,7 @@ echo GridView::widget([
 		],
 		'code',
 		[
-			'class'=>ActionColumn::className(),
+			'class'=>ActionColumn::class,
 			'header'=>'Actions',
 			'headerOptions'=>['width'=>180],
 			'template'=>'{select}<br/>{configuration} {duplicate} {update} {delete}',

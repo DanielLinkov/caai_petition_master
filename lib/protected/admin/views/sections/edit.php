@@ -63,7 +63,7 @@ $this->registerJs("
 ",$this->context->view::POS_HEAD);
 echo $form->field($model,'background_image')
 	->hint(Html::a('Upload more images',['/images/upload'],['target'=>'Images']).' then <button class="btn btn-xs btn-primary" type="button" onclick="populate_background_image_lists()">Refresh Lists</button>')
-	->widget(Select2::className(),[
+	->widget(Select2::class,[
 		'data'=>[],
 		'options'=>['placeholder'=>'None'],
 		'pluginOptions'=>[
@@ -73,7 +73,7 @@ echo $form->field($model,'background_image')
 		]
 	]);
 echo $form->field($model,'background_image_mobile')
-	->widget(Select2::className(),[
+	->widget(Select2::class,[
 		'data'=>[],
 		'options'=>['placeholder'=>'None'],
 		'pluginOptions'=>[
@@ -109,7 +109,7 @@ switch($model->type){
 		switch($preferences ? $preferences->text_editor : NULL){
 			case 'codemirror':
 			default:
-				echo $form->field($dataModel,'content')->widget(CodemirrorWidget::className(),[
+				echo $form->field($dataModel,'content')->widget(CodemirrorWidget::class,[
 					'preset'=>'html',
 					'presetsDir'=>Yii::getAlias('@app/admin/codemirror_presets'),
 					'settings'=>[
@@ -151,13 +151,13 @@ switch($model->type){
 					.trigger('change');
 			");
 		}else{
-			echo $form->field($dataModel,'stack')->widget(SectionStack::className(),['orientation'=>$dataModel->orientation,'count_cells'=>$dataModel->count_cells]);
+			echo $form->field($dataModel,'stack')->widget(SectionStack::class,['orientation'=>$dataModel->orientation,'count_cells'=>$dataModel->count_cells]);
 		}
 		break;
 	case 'image':
 		echo $form->field($dataModel,'image_name')
 			->hint(Html::a('Upload more images',['/images/upload'],['target'=>'Images']).' then <button class="btn btn-xs btn-primary" type="button" onclick="populate_image_list()">Refresh List</button>')
-			->widget(Select2::className(),[
+			->widget(Select2::class,[
 				'data'=>[],
 				'pluginOptions'=>[
 					'templateResult'=>new JsExpression('formatImageName'),
@@ -190,7 +190,7 @@ switch($model->type){
 		echo $form->field($dataModel,'og_description');
 		echo $form->field($dataModel,'og_image')
 			->hint(Html::a('Upload more images',['/images/upload']).' then <button class="btn btn-xs btn-primary" type="button" onclick="populate_og_image_list()">Refresh List</button>')
-			->widget(Select2::className(),[
+			->widget(Select2::class,[
 				'data'=>$image_names,
 				'options'=>['placeholder'=>'None'],
 				'pluginOptions'=>[
@@ -220,7 +220,7 @@ switch($model->type){
 			case 'codemirror':
 			default:
 				echo Html::tag('div',Html::tag('div',"* In the editor press:<ul><li><b>F11</b> to switch to full screen</li><li><b>Ctrl+Space</b> for autocomplete</li></ul>$editor_hint",['class'=>'alert alert-info col-sm-6 col-sm-offset-3']),['class'=>'row']);
-				echo $form->field($dataModel,'head')->widget(CodemirrorWidget::className(),[
+				echo $form->field($dataModel,'head')->widget(CodemirrorWidget::class,[
 					'preset'=>'html',
 					'presetsDir'=>Yii::getAlias('@app/admin/codemirror_presets'),
 					'settings'=>[
@@ -228,7 +228,7 @@ switch($model->type){
 						'viewportMargin'=> new JsExpression('Infinity')
 					]
 				])->hint("Use the <b>{count_signed}</b> and <b>{count_remaining}</b> placeholders which will be replaced with actual numbers");
-				echo $form->field($dataModel,'terms')->widget(CodemirrorWidget::className(),[
+				echo $form->field($dataModel,'terms')->widget(CodemirrorWidget::class,[
 					'preset'=>'html',
 					'presetsDir'=>Yii::getAlias('@app/admin/codemirror_presets'),
 					'settings'=>[

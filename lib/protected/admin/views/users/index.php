@@ -40,7 +40,7 @@ echo GridView::widget([
             }
         ],
         [
-            'class'=>ActionColumn::className(),
+            'class'=>ActionColumn::class,
             'headerOptions'=>['width'=>200],
             'template'=>'<div class="btn-group">{update}{change_password}{delete}</div>',
             'buttons'=>[

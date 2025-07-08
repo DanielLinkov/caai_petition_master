@@ -16,6 +16,7 @@ $template_names = [
 	'pulse',
 	'materia',
 	'lumen',
+	'lumen5',
 	'united'
 ];
 $image_names = [];

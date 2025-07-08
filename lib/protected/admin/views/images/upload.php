@@ -18,7 +18,7 @@ $form = ActiveForm::begin([
 ]);
 echo $form->field($model,'name',['enableAjaxValidation'=>true])->hint("The filename of the image");
 echo $form->field($model,'image')
-	->widget(FileInput::className(),[
+	->widget(FileInput::class,[
 		'options'=>['accept'=>'image/*'],
 		'pluginOptions'=>[
 			'showUpload'=>false,

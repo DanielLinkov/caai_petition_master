@@ -9,7 +9,7 @@ trait PetitionObjectTrait{
 	public function behaviors(){
 		return array_merge(parent::behaviors(),[
 			[
-				'class'			=>	AttributeBehavior::className(),
+				'class'			=>	AttributeBehavior::class,
 				'attributes'	=>	[
 					ActiveRecord::EVENT_BEFORE_INSERT	=>	'petition_id',
 				],

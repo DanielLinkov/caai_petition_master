@@ -99,7 +99,7 @@ echo GridView::widget([
 			}
 		],
 		[
-			'class'=>SectionActionColumn::className(),
+			'class'=>SectionActionColumn::class,
 			'headerOptions'=>['width'=>70],
 			'template'=>'<div class="btn-group btn-block">{move_up} {move_down}</div> {delete}',
 			'buttons'=>[

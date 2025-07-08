@@ -42,7 +42,10 @@
         },
 		"platform": {
 			"php": "7.3"
-		}
+		},
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
     },
     "scripts": {
         "post-install-cmd": [

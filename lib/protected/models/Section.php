@@ -32,7 +32,7 @@ class Section extends \yii\db\ActiveRecord{
 	public function behaviors(){
 		return array_merge($this->traitBehaviors(),[
 			[
-				'class'		=>	AttributeBehavior::className(),
+				'class'		=>	AttributeBehavior::class,
 				'attributes'=>	[
 					ActiveRecord::EVENT_BEFORE_INSERT	=>	'order_ind'
 				],
@@ -45,14 +45,12 @@ class Section extends \yii\db\ActiveRecord{
 				}
 			],
 			[
-				'class'		=>	AttributeBehavior::className(),
+				'class'		=>	AttributeBehavior::class,
 				'attributes'=>	[
 					ActiveRecord::EVENT_BEFORE_INSERT	=>	'mask_pages',
 					ActiveRecord::EVENT_BEFORE_VALIDATE	=>	'mask_pages'
 				],
 				'value'		=>	function(){
-					if($this->owner->mask_pages)
-						return $this->owner->mask_pages;
 					return ($this->mask_page_main ? self::MASK_PAGE_MAIN : 0) | ($this->mask_page_thanks ? self::MASK_PAGE_THANKS : 0);
 				}
 			]

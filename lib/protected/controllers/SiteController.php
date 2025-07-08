@@ -13,7 +13,7 @@ class SiteController extends Controller
 	public function behaviors(){
 		return [
 			[
-				'class'=>PageCache::className(),
+				'class'=>PageCache::class,
 				'enabled'=>!YII_ENV_DEV,
 				'only'=>['index','thanks'],
 				'duration'=>0,

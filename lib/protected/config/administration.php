@@ -22,9 +22,23 @@ $config = [
         'access_control'=>[
             'class'=>'app\admin\components\AccessControl',
         ],
+		'session' => [
+			'class' => 'yii\web\Session',
+			'name' => 'petition_admin_session',
+			'cookieParams' => [
+				'httpOnly' => true,
+				'sameSite' => 'Strict',
+				'secure' => true, // Set to true if using HTTPS
+				'path' => '/administration', // Adjust path if needed
+			],
+		],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'RtnOhiQepPmOVTxXI8r0YZ8emYtfPfD-',
+			'csrfCookie' => [
+				'sameSite' => 'Strict',
+				'path' => '/administration', // Adjust path if needed
+			],
         ],
         'page_cache' => [
             'class' => 'yii\caching\FileCache',

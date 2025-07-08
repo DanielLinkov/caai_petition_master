@@ -44,9 +44,15 @@ $config = [
                 ]
 			]
 		],
+		'session' => [
+			'class' => 'yii\web\Session',
+			'name' => '',
+		],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'RtnOhiQepPmOVTxXI8r0YZ8emYtfPfD-',
+			'enableCsrfValidation' => false, // Disable CSRF validation for API requests
+			'enableCsrfCookie' => false, // Disable CSRF cookie for API requests
         ],
         'page_cache' => [
             'class' => 'yii\caching\FileCache',

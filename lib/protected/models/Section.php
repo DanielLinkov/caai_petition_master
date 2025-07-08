@@ -541,6 +541,7 @@ class ShareDataModel extends DataModel{
 	public $og_image;
 	public function rules(){
 		return [
+			[['og_url','og_type','og_title','og_description','og_image'],'required'],
 			[['og_url','og_type','og_title','og_description','og_image'],'string','max'=>128]
 		];
 	}

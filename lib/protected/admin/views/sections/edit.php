@@ -185,7 +185,19 @@ switch($model->type){
 	case 'share':
 		echo Html::tag('h3','Facebook meta tags');
 		echo $form->field($dataModel,'og_url');
-		echo $form->field($dataModel,'og_type');
+		echo $form->field($dataModel,'og_type')->dropDownList([
+			'website'=>'Website',
+			'article'=>'Article',
+			'video.movie'=>'Video Movie',
+			'video.episode'=>'Video Episode',
+			'video.tv_show'=>'Video TV Show',
+			'video.other'=>'Video Other',
+			'book'=>'Book',
+			'profile'=>'Profile',
+			'event'=>'Event',
+			'product'=>'Product',
+			'place'=>'Place',
+		],['prompt'=>'Select Type']);
 		echo $form->field($dataModel,'og_title');
 		echo $form->field($dataModel,'og_description');
 		echo $form->field($dataModel,'og_image')

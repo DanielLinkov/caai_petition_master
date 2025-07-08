@@ -5,8 +5,8 @@ use Unirest\Request;
 use Unirest\Exception;
 
 class ApiSubscriptionAdapter extends \yii\base\Component{
-	//const API_ENDPOINT = 'https://crm.caai.bg/apis/campaign-subscription/v1/';
-	const API_ENDPOINT = 'http://caai-server.localsrv.therendstudio.net/apis/campaign-subscription/v1/';
+	const API_ENDPOINT = 'https://crm.caai.bg/apis/campaign-subscription/v1/';
+	// const API_ENDPOINT = 'http://caai-server.localsrv.therendstudio.net/apis/campaign-subscription/v1/';
     public $api_key;
     public function get_count($petition_code){
         try{

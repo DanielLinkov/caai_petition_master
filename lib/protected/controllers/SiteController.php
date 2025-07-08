@@ -38,11 +38,17 @@ class SiteController extends Controller
     public function actionIndex()
     {
 		$sections = Section::find()->andWhere(['parent_id'=>NULL])->andWhere('mask_pages & '.Section::MASK_PAGE_MAIN)->orderBy('order_ind ASC')->all();
-        return $this->render('index',compact('sections'));
+        return $this->render('index',[
+			'sections' => $sections,
+			'page_mask' => Section::MASK_PAGE_MAIN,
+		]);
     }
 	public function actionThanks(){
 		$sections = Section::find()->andWhere(['parent_id'=>NULL])->andWhere('mask_pages & '.Section::MASK_PAGE_THANKS)->orderBy('order_ind ASC')->all();
-        return $this->render('index',compact('sections'));
+        return $this->render('index',[
+			'sections' => $sections,
+			'page_mask' => Section::MASK_PAGE_THANKS,
+		]);
 	}
 	private function validateMailserver($hostname){
 		return getmxrr($hostname,$hosts) && count($hosts);

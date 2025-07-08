@@ -92,7 +92,7 @@ class Section extends \yii\db\ActiveRecord{
 				throw new \yii\web\ServerErrorHttpException("Invalid section type: $this->type");
 		}
 	}
-	public function render(){
+	public function render(int $PAGE_MASK){
 		$dataModel = $this->getDataModel();
 		if($dataModel)
 			$dataModel->unserialize($this->data);
@@ -196,8 +196,8 @@ class Section extends \yii\db\ActiveRecord{
 					$cell = json_decode($cell);
 					if($cell && isset($cell->id)){
 						$section = self::findOne($cell->id);
-						if($section){
-							$cellMarkup .= Html::tag('div',$section->render(),['class'=>$dataModel->orientation == 'vertical' ? "col row-$ind" : "col-md-$col_width_class column-$ind"]);
+						if($section && $section->mask_pages & $PAGE_MASK){
+							$cellMarkup .= Html::tag('div',$section->render($PAGE_MASK),['class'=>$dataModel->orientation == 'vertical' ? "col row-$ind" : "col-md-$col_width_class column-$ind"]);
 							continue;
 						}
 					}

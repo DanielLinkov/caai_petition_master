@@ -9,15 +9,25 @@ $this->params['breadcrumbs'] = [
 	"Petition Configuration"
 ];
 $template_names = [
+	'brite5',
 	'darkly',
+	'darkly5',
 	'cyborg',
+	'cyborg5',
 	'cerulan',
+	'cerulean5',
 	'spacelab',
+	'spacelab5',
 	'pulse',
+	'pulse5',
 	'materia',
+	'materia5',
+	'morph5',
 	'lumen',
 	'lumen5',
-	'united'
+	'united',
+	'united5',
+	'vapor5'
 ];
 $image_names = [];
 foreach(FileHelper::findFiles(Yii::getAlias('@petitionsroot/'.Yii::$app->request->get('id').'/images'),['recursive'=>false]) AS $image_name){

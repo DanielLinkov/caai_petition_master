@@ -87,7 +87,7 @@ class SectionsController extends \yii\web\Controller{
 				Yii::$app->page_cache->flush();
 				Yii::$app->msg->flash(($model->parent_id ? "Subsection" : "Section") . " saved","success");
 				if(Yii::$app->request->post('action') == 'edit' || $dataModel && $dataModel->shouldSaveBeforeEdit() && !$dataModel->isDataComplete()){
-					return $this->redirect(['update','id'=>$model->id]);
+					return $this->redirect(['update','id'=>$model->id,'#'=>'textdatamodel-content']);
 				}else{
 					return $this->redirect($model->parent_id ? ['update','id'=>$model->parent_id] : ['index']);
 				}

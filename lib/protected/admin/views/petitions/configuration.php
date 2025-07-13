@@ -25,6 +25,7 @@ $template_names = [
 	'morph5',
 	'lumen',
 	'lumen5',
+	'slate5',
 	'united',
 	'united5',
 	'vapor5'

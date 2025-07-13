@@ -74,4 +74,10 @@ $this->registerJs("
 			event.target.disabled = false;
 		});
 	});
+	document.addEventListener('keydown',function(event){
+		if(event.key == 's' && (event.ctrlKey || event.metaKey)){
+			event.preventDefault();
+			document.getElementById('save').click();
+		}
+	});
 ");

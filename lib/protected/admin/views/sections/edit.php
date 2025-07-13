@@ -274,7 +274,15 @@ switch($model->type){
 		echo $form->field($dataModel,'show_country_field')->checkbox(['label'=>'Show counry field']);
 		break;
 }
-echo Html::submitButton('Save & Continue to Edit',['name'=>'action','value'=>'edit','class'=>'btn btn-success btn-lg btn-block']);
+echo Html::submitButton('Save & Continue to Edit',['id'=>'btn-save','name'=>'action','value'=>'edit','class'=>'btn btn-success btn-lg btn-block']);
 echo Html::submitButton('Save',['name'=>'action','class'=>'btn btn-primary btn-lg btn-block']);
 ActiveForm::end();
+$this->registerJs("
+	document.addEventListener('keydown',function(event){
+		if(event.key == 's' && (event.ctrlKey || event.metaKey)){
+			event.preventDefault();
+			document.getElementById('btn-save').click();
+		}
+	});
+");
 ?>

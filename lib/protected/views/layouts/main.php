@@ -38,6 +38,7 @@ AppAsset::register($this);
 </main>
 <?= Yii::$app->active_petition->config ? Yii::$app->active_petition->config->code_snippets_footer : NULL ?>
 <?php $this->endBody() ?>
+<?= Yii::$app->active_petition->config ? Yii::$app->active_petition->config->code_snippets_end_body ?? 'hello' : NULL ?>
 </body>
 </html>
 <?php $this->endPage() ?>

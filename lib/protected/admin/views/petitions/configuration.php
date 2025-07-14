@@ -48,8 +48,10 @@ echo $form->field($model,'template_name')->dropDownList(array_combine($template_
 echo $form->field($model,'favicon')->dropDownList(array_combine($image_names,$image_names));
 echo $form->field($model,'page_title');
 echo $form->field($model,'page_description');
-echo $form->field($model,'code_snippets_footer')->textArea(['rows'=>10])->hint("To put in page footer <b>(prefered location for performance sake)</b> as raw markup (4096 chars max)");
-echo $form->field($model,'code_snippets_header')->textArea(['rows'=>3])->hint("To put in page header as raw markup (256 chars max)");
+echo $form->field($model,'code_snippets_header')->textArea(['rows'=>6,'maxlength'=>true])->hint("To put in page header as raw markup (2048 chars max)");
+echo $form->field($model,'code_snippets_footer')->textArea(['rows'=>10,'maxlength'=>true])->hint("To put in page footer <b>(prefered location for performance sake)</b> as raw markup (2048 chars max)");
+echo $form->field($model,'code_snippets_end_body')->textArea(['rows'=>10,'maxlength'=>true])->hint("To put in just before closing body tag <b>(after other scripts)</b> as raw markup (2048 chars max)");
 echo $form->field($model,'backtotop_plugin')->checkbox(['label'=>'Show back-to-top indicator']);
+echo $form->field($model,'smoothscroll_plugin')->checkbox(['label'=>'Include smooth scroll plugin']);
 echo Html::submitButton('Update',['class'=>'btn btn-block btn-primary']);
 ActiveForm::end();
